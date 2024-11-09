@@ -1,1 +1,1 @@
-# stripe-test
+# stripe-test - package file
