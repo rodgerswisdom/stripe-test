@@ -6,17 +6,15 @@
   "scripts": {
     "start": "nodemon server.js",
     "test": "jest",
-    "postinstall": "npm install sqlite3"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
-    "sequelize": "^6.37.5",
-    "sqlite": "^5.1.1",
-    "sqlite3": "^5.1.7",
+    "mongoose": "^8.8.1",
     "stripe": "^17.2.1"
   }
 }

@@ -5,8 +5,5 @@
     ],
     "routes": [
       { "src": "/api/(.*)", "dest": "/server.js" }
-    ],
-    "env": {
-      "STRIPE_SECRET_KEY":"sk_test_51PZEUqKPaNhA3HGzZjJzbj1ZnPlR9iXMFP1cgl7E31xbaRW494jSGOlF3j4q8LoiPw4RGykf2shbfqNh1gLNkP9u00Lhzo2eVf"
-    }
-  }
+    ]
+ }
