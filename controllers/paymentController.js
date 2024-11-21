@@ -1,4 +1,4 @@
-const StripePayment = require('../models/paymentModel');
+const Model = require('../models/paymentModel');
 const stripeService = require('../services/stripeService');
 
 /**
@@ -15,16 +15,17 @@ class PaymentController {
    * @returns {Promise<void>} - Sends a response to the client
    */
   static async postPayment(req, res) {
-    const { amount, currency } = req.body;
+    const { user_id,amount, currency } = req.body;
     console.log("Received request body:", req.body);
 
     try {
       const paymentIntent = await stripeService.createPaymentIntent(amount, currency);
 
-      await StripePayment.create({
+      await Model.create({
+        user: user_id,
         amount,
         currency,
-        payment_intent_id: paymentIntent.id,
+        payment_intent: paymentIntent.id,
       });
 
       res.status(200).json({

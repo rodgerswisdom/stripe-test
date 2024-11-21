@@ -1,11 +1,14 @@
 const mongoose = require('mongoose');
 
 const dataSchema = new mongoose.Schema({
-   user_id:{
+   user:{
 	   required: false,
 	   type: String
    },
-   payment_intent_id:{
+   stripe_customer:{
+	   type: String
+   },
+   payment_intent:{
 	   required:true,
            type:String
    },
