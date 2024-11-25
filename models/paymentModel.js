@@ -9,7 +9,7 @@ const dataSchema = new mongoose.Schema({
 	   type: String
    },
    payment_intent:{
-	   required:true,
+	   required:false,
            type:String
    },
    amount:{
