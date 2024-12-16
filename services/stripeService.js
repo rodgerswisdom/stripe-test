@@ -18,9 +18,11 @@ const createPaymentIntent = async (amount, currency) => {
         const paymentIntent = await stripe.paymentIntents.create({
             amount: paymentAmount,
             currency: currency,
-            automatic_payment_methods: {
-                enabled: true,
-            },
+            payment_method: 'pm_card_visa',
+            payment_method_types: ['card'],
+            // automatic_payment_methods: {
+            //  enabled: true,
+            // },
         });
         return paymentIntent;
     } catch (error) {

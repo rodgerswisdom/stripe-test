@@ -1,12 +1,16 @@
 require('dotenv').config();
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-const StripePayment = require('../models/paymentModel'); // Updated to match the shared model
+const StripePayment = require('../models/paymentModel');
 
 const createStripeCustomer = async (userId) => {
     let stripe_customer;
 
     try {
-        // Find existing customer in the database for the provided user
+        /**
+         *
+         * Find existing customer in the database for the provided user
+         *
+         */
         const customerRecord = await StripePayment.findOne({ user: userId });
 
         if (customerRecord && customerRecord.stripe_customer) {
