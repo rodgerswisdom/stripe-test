@@ -48,7 +48,7 @@ class PaymentController {
       res.status(200).json({
         message: 'Payment successful',
         user_id: user_id,
-        stripe_customer: stripe_customer.id,
+        stripeCustomer: stripe_customer.id,
         amount: amount,
         paymentIntent: paymentIntent.id,
         clientSecret: paymentIntent.client_secret,
